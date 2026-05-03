@@ -1,0 +1,34 @@
+# DevVerse Environment Configuration
+# Copy this file to .env and fill in your actual credentials
+
+# ============================================
+# IBM watsonx.ai Configuration
+# ============================================
+WATSONX_API_KEY=your_ibm_cloud_api_key_here
+WATSONX_PROJECT_ID=your_watsonx_project_id_here
+WATSONX_REGION_URL=https://us-south.ml.cloud.ibm.com
+
+# Optional: Use Space ID instead of Project ID
+# WATSONX_SPACE_ID=your_deployment_space_id_here
+
+# ============================================
+# watsonx Orchestrate Configuration
+# ============================================
+ORCHESTRATE_API_KEY=your_orchestrate_api_key_here
+ORCHESTRATE_URL=https://your-orchestrate-instance.com
+ORCHESTRATE_AGENT_ID=your_agent_id_here
+
+# ============================================
+# Slack Configuration
+# ============================================
+SLACK_BOT_TOKEN=xoxb-your-slack-bot-token-here
+SLACK_CHANNEL_ID=C01234567890
+
+# ============================================
+# Setup Instructions
+# ============================================
+# 1. Get IBM Cloud API Key: https://cloud.ibm.com/iam/apikeys
+# 2. Create watsonx.ai Project: https://dataplatform.cloud.ibm.com/
+# 3. Set up Slack App: https://api.slack.com/apps
+# 4. Configure Orchestrate: https://orchestrate.ibm.com/
+# 5. Copy this file to .env and fill in your credentials

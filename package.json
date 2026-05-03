@@ -1,0 +1,55 @@
+{
+  "name": "devverse",
+  "version": "1.0.0",
+  "description": "Empathy-Driven Code Review & Onboarding Simulator using IBM watsonx",
+  "main": "src/middleware/index.js",
+  "scripts": {
+    "start": "node src/middleware/index.js",
+    "dev": "nodemon src/middleware/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:integration": "jest tests/integration.test.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "validate-env": "node src/config/validation.js",
+    "setup": "npm install && npm run validate-env"
+  },
+  "keywords": [
+    "code-review",
+    "watsonx",
+    "ibm",
+    "empathy",
+    "onboarding",
+    "ai",
+    "developer-experience"
+  ],
+  "author": "DevVerse Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/devverse.git"
+  },
+  "dependencies": {
+    "@ibm-cloud/watsonx-ai": "^1.0.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "winston": "^3.11.0",
+    "joi": "^17.11.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

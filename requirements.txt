@@ -1,0 +1,6 @@
+# Core dependencies for DevVerse Phase 2
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Optional: IBM Watson Machine Learning SDK (alternative to REST API)
+# ibm-watson-machine-learning==1.0.335
