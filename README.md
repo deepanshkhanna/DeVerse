@@ -6,11 +6,35 @@ An AI-powered code review system that transforms technical feedback into empathe
 
 DevVerse bridges the gap between technical accuracy and human empathy in code reviews. It analyzes code using IBM Bob, transforms feedback through watsonx.ai's Granite models, and delivers personalized reviews via watsonx Orchestrate.
 
-## 🏗️ Architecture
+## 🏗️ Technical Architecture
+
+### Zero-Trust AI Code Reviews with Trusted Execution Environment (TEE)
 
 ```
-Developer → IBM Bob → watsonx.ai → watsonx Orchestrate → Slack/Teams
+Developer → IBM Bob → [TEE: Hyper Protect] → watsonx.ai → watsonx Orchestrate → Slack/Teams
+                            ↓
+                    Secure In-Memory Processing
+                    (Code never touches disk)
 ```
+
+**Architecture Flow:**
+1. **Code Analysis**: IBM Bob analyzes developer code and generates technical feedback
+2. **TEE Secure Processing**: Python transformation script runs inside IBM Cloud Hyper Protect Virtual Server (Confidential Computing TEE)
+   - Source code is loaded into encrypted memory
+   - Formatting and prompt engineering occurs in isolated, hardware-encrypted environment
+   - Zero persistence - code never written to disk or logs
+3. **AI Transformation**: Formatted prompts sent to watsonx.ai Granite models for empathetic rewriting
+4. **Delivery**: watsonx Orchestrate delivers personalized feedback via Slack/Teams
+
+### 🛡️ Security Value Proposition
+
+**Enterprise-Grade Confidential Computing for Proprietary Code:**
+
+- **In-Memory Encryption**: Your source code is processed entirely within a hardware-based Trusted Execution Environment (TEE) using IBM Cloud Hyper Protect Virtual Servers. Code remains encrypted in memory and is never persisted to disk, logs, or external storage.
+
+- **Zero-Trust AI Integration**: The TEE acts as a secure middle-layer that formats proprietary code for AI analysis without exposing raw source to watsonx.ai. Only sanitized, context-aware prompts leave the secure enclave, protecting intellectual property while leveraging AI capabilities.
+
+- **Attestation & Compliance**: IBM Hyper Protect provides cryptographic attestation that code processing occurs only in verified, tamper-proof environments. Meets regulatory requirements for handling sensitive codebases in financial services, healthcare, and government sectors.
 
 ## 🚀 Quick Start
 
